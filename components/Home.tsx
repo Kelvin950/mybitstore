@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Buy_Sell from "./Buy_Sell";
 import HowToBuy from "./HowToBuy";
 import FAQ from "./FAQ";
+import Footer from "./Footer";
 
 export default function Home(){
     return <>
@@ -12,5 +13,6 @@ export default function Home(){
       <Buy_Sell/>
       <HowToBuy/>
       <FAQ/>
+      <Footer/>
     </>
 }

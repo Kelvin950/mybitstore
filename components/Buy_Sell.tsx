@@ -51,9 +51,9 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
             </button>
           </div>
 
-          {/* Currency Inputs */}
+    
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            {/* From */}
+     
             <div>
               <label className="block text-xs text-slate-400 mb-2 font-medium">I want to buy</label>
               <div className="relative">
@@ -75,7 +75,7 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
               <div className="mt-1 text-xs text-slate-500 mono">200-29,500 USD</div>
             </div>
 
-            {/* To */}
+     
             <div>
               <label className="block text-xs text-slate-400 mb-2 font-medium">I will receive</label>
               <div className="relative">
@@ -98,7 +98,7 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
             </div>
           </div>
 
-          {/* Payment Methods */}
+     
           <div className="mb-6">
             <label className="block text-xs text-slate-400 mb-3 font-medium">Payment Services</label>
             <div className="grid grid-cols-2 gap-2">
@@ -119,7 +119,7 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
             </div>
           </div>
 
-          {/* Buy Button */}
+         
           <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold text-sm text-white transition-all">
             Buy
           </button>
