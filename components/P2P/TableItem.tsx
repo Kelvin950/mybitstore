@@ -13,7 +13,7 @@ interface TableItemProps {
 }
 
 export default function TableItem({
-  id,
+
   name,
   txCount,
   successRate,

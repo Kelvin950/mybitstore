@@ -7,6 +7,6 @@ export interface Currency {
 export interface PaymentMethod {
   id: string;
   name: string;
-  icon: React.ReactNode;
+  icon: string;
   selected?: boolean;
 }

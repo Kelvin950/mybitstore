@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 import {Currency ,PaymentMethod} from "@/lib/types"
 import { ChevronDown, Wallet, Smartphone, Building2, CreditCard, Plus } from 'lucide-react';
+import Image from "next/image";
 export default function Buy_Sell(){
 const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
   const [fromAmount, setFromAmount] = useState<string>('0.00');
@@ -8,21 +10,21 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
   const [fromCurrency, setFromCurrency] = useState<Currency>({
     symbol: 'USD',
     name: 'US Dollar',
-    icon: '💵'
+    icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcSqOWD6VMcEVBsPu4O0Wkw24YNOZ10qFdA&s'
   });
   const [toCurrency, setToCurrency] = useState<Currency>({
     symbol: 'BTC',
     name: 'Bitcoin',
-    icon: '₿'
+    icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040'
   });
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
   const [selectedPayment, setSelectedPayment] = useState<string>('eziepay');
 
   const paymentMethods: PaymentMethod[] = [
-    { id: 'eziepay', name: 'Eziepay Global Wallet', icon: <Wallet className="w-4 h-4" /> },
-    { id: 'mtn', name: 'MTN MOMO', icon: <Smartphone className="w-4 h-4" /> },
-    { id: 'vodafone', name: 'Vodafone Cash', icon: <CreditCard className="w-4 h-4" /> },
-    { id: 'bank', name: 'Bank Transfer', icon: <Building2 className="w-4 h-4" /> },
+    { id: 'eziepay', name: 'Eziepay Global Wallet', icon: "https://media.licdn.com/dms/image/v2/C4D0BAQHF93mjyuJsSw/company-logo_200_200/company-logo_200_200/0/1674291509517?e=2147483647&v=beta&t=d0Iu0Iea1t3k4GU9Md2aL_25iEZ476yDBnFMZHrCVwA" },
+    { id: 'mtn', name: 'MTN MOMO', icon:  "https://www.delreport.com/wp-content/uploads/2020/08/screen-0.jpg" },
+    { id: 'vodafone', name: 'Vodafone Cash', icon: "https://www.telecel.com.gh/img/Telecel-Icon-Red.png" },
+    { id: 'bank', name: 'Bank Transfer', icon: "https://statrys.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fstatrys%2F817d7009-1e05-45a5-a480-812c29ee3944_international-bank-transfer.png%3Fauto%3Dcompress%2Cformat%26rect%3D0%2C0%2C680%2C680%26w%3D680%26h%3D680&w=3840&q=75" },
   ];
 
     return <div className=" max-w-4xl mx-auto px-6">
@@ -61,7 +63,13 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
               <div className="relative">
                 <div className="flex items-center bg-slate-800/50 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-colors">
                   <div className="flex items-center space-x-2 px-3 py-2.5 border-r border-slate-700 cursor-pointer hover:bg-slate-700/30 transition-colors rounded-l-xl">
-                    <span className="text-lg">{fromCurrency.icon}</span>
+                   <Image
+                      src={fromCurrency.icon}
+                      alt="USDT Logo"
+                      width={16}
+                      height={16}
+                      className="rounded-full"
+                    />
                     <span className="font-medium text-sm">{fromCurrency.symbol}</span>
                     <ChevronDown className="w-3 h-3 text-slate-400" />
                   </div>
@@ -83,7 +91,13 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
               <div className="relative">
                 <div className="flex items-center bg-slate-800/50 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-colors">
                   <div className="flex items-center space-x-2 px-3 py-2.5 border-r border-slate-700 cursor-pointer hover:bg-slate-700/30 transition-colors rounded-l-xl">
-                    <span className="text-lg">{toCurrency.icon}</span>
+                   <Image
+                      src={toCurrency.icon}
+                      alt="USDT Logo"
+                      width={16}
+                      height={16}
+                      className="rounded-full"
+                    />
                     <span className="font-medium text-sm">{toCurrency.symbol}</span>
                     <ChevronDown className="w-3 h-3 text-slate-400" />
                   </div>
@@ -114,7 +128,13 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                       : 'border-slate-700 hover:border-slate-600 bg-slate-800/30 text-slate-300 hover:text-white'
                   }`}
                 >
-                  {method.icon}
+                 <Image
+                      src={method.icon}
+                      alt="USDT Logo"
+                      width={20}
+                      height={50}
+                      className="rounded-full"
+                    />
                   <span className="text-sm font-medium">{method.name}</span>
                 </button>
               ))}

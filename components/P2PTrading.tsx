@@ -20,13 +20,13 @@ interface TradeOffer {
 export default function P2PTrading() {
   const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
   const [selectedCrypto, setSelectedCrypto] = useState('USDT');
-  const [selectedFiat, setSelectedFiat] = useState('GHS');
+
   const [amountFilter, setAmountFilter] = useState('');
   const [paymentFilter, setPaymentFilter] = useState('All Payments');
   const [currentPage, setCurrentPage] = useState(1);
 
   const cryptoOptions = ['USDT', 'BTC', 'ETH'];
-  const fiatOptions = ['GHS', 'USD', 'EUR', 'NGN'];
+
   const paymentOptions = ['All Payments', 'MTN Mobile Money', 'Vodafone Cash', 'Bank Transfer', 'AirtelTigo Money'];
 
   const offers: TradeOffer[] = [

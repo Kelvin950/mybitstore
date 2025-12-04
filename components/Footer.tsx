@@ -1,4 +1,4 @@
-import { MessageCircle, Twitter, Instagram, Play } from 'lucide-react';
+import { MessageCircle, Twitter, Instagram, Play  } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -59,7 +59,7 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* App Store Buttons */}
+           
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#" className="flex items-center justify-center space-x-2 bg-black border border-slate-700 rounded-lg px-4 py-3 hover:bg-slate-900 transition-colors min-w-[140px]">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">

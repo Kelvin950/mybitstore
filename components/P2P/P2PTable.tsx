@@ -1,4 +1,4 @@
-import { useState } from 'react';
+ 
 import TableItem from './TableItem';
 
 interface TradeOffer {
@@ -22,7 +22,7 @@ interface P2PTableProps {
 
 export default function P2PTable({
   offers,
-  selectedCrypto,
+
   activeTab,
   currentPage,
   setCurrentPage
