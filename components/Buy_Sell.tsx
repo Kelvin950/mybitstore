@@ -25,30 +25,32 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
     { id: 'bank', name: 'Bank Transfer', icon: <Building2 className="w-4 h-4" /> },
   ];
 
-    return <div className="max-w-4xl mx-auto px-6">
-      <div className="glass-effect rounded-2xl p-6 shadow-2xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
+    return <div className=" max-w-4xl mx-auto px-6">
+      <div className="bg-[#212740] glass-effect rounded-2xl p-6 shadow-2xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
           {/* Tabs */}
-          <div className="flex space-x-1 mb-6 bg-slate-800/30 rounded-xl p-1">
-            <button
-              onClick={() => setActiveTab('buy')}
-              className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all text-sm ${
-                activeTab === 'buy'
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              Buy
-            </button>
-            <button
-              onClick={() => setActiveTab('sell')}
-              className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all text-sm ${
-                activeTab === 'sell'
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              Sell
-            </button>
+          <div className="flex justify-start mb-6">
+            <div className="flex space-x-6">
+              <button
+                onClick={() => setActiveTab('buy')}
+                className={`px-2 py-1.5 font-medium transition-all text-sm border-b-2 ${
+                  activeTab === 'buy'
+                    ? 'border-blue-500 text-white'
+                    : 'border-transparent text-slate-400 hover:text-white'
+                }`}
+              >
+                Buy
+              </button>
+              <button
+                onClick={() => setActiveTab('sell')}
+                className={`px-2 py-1.5 font-medium transition-all text-sm border-b-2 ${
+                  activeTab === 'sell'
+                    ? 'border-blue-500 text-white'
+                    : 'border-transparent text-slate-400 hover:text-white'
+                }`}
+              >
+                Sell
+              </button>
+            </div>
           </div>
 
     
@@ -101,28 +103,30 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
      
           <div className="mb-6">
             <label className="block text-xs text-slate-400 mb-3 font-medium">Payment Services</label>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {paymentMethods.map((method) => (
                 <button
                   key={method.id}
                   onClick={() => setSelectedPayment(method.id)}
-                  className={`payment-btn flex items-center space-x-2 px-3 py-2.5 rounded-lg border text-left ${
+                  className={`payment-btn flex items-center justify-center space-x-2 px-4 py-3 rounded-lg border text-center transition-all ${
                     selectedPayment === method.id
-                      ? 'active border-blue-500 bg-blue-500/10'
-                      : 'border-slate-700 hover:border-slate-600 bg-slate-800/30'
+                      ? 'active border-blue-500 bg-blue-500/10 text-blue-400'
+                      : 'border-slate-700 hover:border-slate-600 bg-slate-800/30 text-slate-300 hover:text-white'
                   }`}
                 >
                   {method.icon}
-                  <span className="text-xs font-medium">{method.name}</span>
+                  <span className="text-sm font-medium">{method.name}</span>
                 </button>
               ))}
             </div>
           </div>
 
          
-          <button className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold text-sm text-white transition-all">
-            Buy
-          </button>
+          <div className="flex justify-start">
+            <button className="px-6 py-2 rounded-md font-medium transition-all text-sm bg-blue-600 text-white hover:bg-blue-700">
+              {activeTab === 'buy' ? 'Buy' : 'Sell'}
+            </button>
+          </div>
         </div>
       </div>
 }

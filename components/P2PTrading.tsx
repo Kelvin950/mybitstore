@@ -133,13 +133,13 @@ export default function P2PTrading() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 py-6">
+    <div className="min-h-screen  py-6">
 
       <P2PHero />
 
 
       <div className="max-w-6xl mx-auto px-6 mt-6">
-        <Card className="bg-slate-800/50 border-slate-700">
+        <Card className="bg-[#212740] border-slate-700">
           <CardContent className="p-6">
      
             <div className="space-y-6 mb-8">

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function P2PHero() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-6">
-      <Card className="bg-slate-800/50 border-slate-700">
+      <Card className="bg-[#212740] border-slate-700">
         <CardContent className="p-6">
           <div className="flex items-center justify-between">
             <div>

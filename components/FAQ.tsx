@@ -13,14 +13,14 @@ const faqItems = [
 export default function FAQ(){
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   
-  return <div className="max-w-4xl mx-auto px-6 py-8 animate-slide-in" style={{ animationDelay: '0.6s' }}>
+  return <div className=" max-w-4xl mx-auto px-6 py-8 animate-slide-in" style={{ animationDelay: '0.6s' }}>
     <h2 className="text-2xl font-bold mb-8 text-center">FAQ</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
       {faqItems.map((item, index) => (
         <button
           key={index}
           onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-          className="glass-effect rounded-lg p-4 text-left hover:border-blue-500/50 transition-all group"
+          className="glass-effect bg-[#212740] rounded-lg p-4 text-left hover:border-blue-500/50 transition-all group"
         >
           <div className="flex items-center justify-between">
             <span className="text-slate-300 group-hover:text-white transition-colors text-sm">{item}</span>

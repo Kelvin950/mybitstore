@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface P2PControlsProps {
   activeTab: 'buy' | 'sell';
   setActiveTab: (tab: 'buy' | 'sell') => void;
@@ -51,7 +53,36 @@ export default function P2PControls({
                 : 'border-slate-600 text-slate-400 hover:border-slate-500'
             }`}
           >
-            {crypto === 'USDT' && '⚪'} {crypto === 'BTC' && '🟡'} {crypto === 'ETH' && '🔷'} {crypto}
+            <div className="flex items-center gap-1">
+              {crypto === 'USDT' && (
+                <Image
+                  src="https://cryptologos.cc/logos/tether-usdt-logo.png?v=040"
+                  alt="USDT Logo"
+                  width={16}
+                  height={16}
+                  className="rounded-full"
+                />
+              )}
+              {crypto === 'BTC' && (
+                <Image
+                  src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040"
+                  alt="Bitcoin Logo"
+                  width={16}
+                  height={16}
+                  className="rounded-full"
+                />
+              )}
+              {crypto === 'ETH' && (
+                <Image
+                  src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=040"
+                  alt="Ethereum Logo"
+                  width={16}
+                  height={16}
+                  className="rounded-full"
+                />
+              )}
+              <span>{crypto}</span>
+            </div>
           </button>
         ))}
       </div>

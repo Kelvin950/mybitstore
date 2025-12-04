@@ -11,7 +11,7 @@ export default function HowToBuy(){
           ].map((step, index) => (
             <div
               key={index}
-              className="glass-effect rounded-xl p-6 text-center group hover:scale-105 transition-all"
+              className="glass-effect bg-[#212740] rounded-xl p-6 text-center group hover:scale-105 transition-all"
             >
               <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <step.icon className="w-6 h-6 text-white" />

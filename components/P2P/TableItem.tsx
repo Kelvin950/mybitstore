@@ -27,7 +27,7 @@ export default function TableItem({
     <div className="grid grid-cols-12 gap-4 items-center py-4 border-b border-slate-700">
 
       <div className="col-span-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
+        <div className="w-10 h-10 rounded-full bg-[#254cb2] flex items-center justify-center text-slate-300">
           {name.charAt(0).toUpperCase()}
         </div>
         <div>
@@ -48,7 +48,7 @@ export default function TableItem({
 
       <div className="col-span-2 text-sm text-slate-400">
         {paymentMethods.map((method, index) => (
-          <div key={index} className="truncate">| {method}</div>
+          <div key={index} className="truncate"><span className="text-red-300">|</span> {method}</div>
         ))}
       </div>
 
