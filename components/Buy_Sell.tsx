@@ -3,6 +3,8 @@ import { useState } from "react";
 import {Currency ,PaymentMethod} from "@/lib/types"
 import { ChevronDown, Wallet, Smartphone, Building2, CreditCard, Plus } from 'lucide-react';
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 export default function Buy_Sell(){
 const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
   const [fromAmount, setFromAmount] = useState<string>('0.00');
@@ -32,7 +34,8 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
           {/* Tabs */}
           <div className="flex justify-start mb-6">
             <div className="flex space-x-6">
-              <button
+              <Button
+                variant="ghost"
                 onClick={() => setActiveTab('buy')}
                 className={`px-2 py-1.5 font-medium transition-all text-sm border-b-2 ${
                   activeTab === 'buy'
@@ -41,8 +44,9 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                 }`}
               >
                 Buy
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
                 onClick={() => setActiveTab('sell')}
                 className={`px-2 py-1.5 font-medium transition-all text-sm border-b-2 ${
                   activeTab === 'sell'
@@ -51,7 +55,7 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                 }`}
               >
                 Sell
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -73,11 +77,11 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                     <span className="font-medium text-sm">{fromCurrency.symbol}</span>
                     <ChevronDown className="w-3 h-3 text-slate-400" />
                   </div>
-                  <input
+                  <Input
                     type="number"
                     value={fromAmount}
                     onChange={(e) => setFromAmount(e.target.value)}
-                    className="flex-1 bg-transparent px-3 py-2.5 outline-none text-sm mono"
+                    className="flex-1 bg-transparent px-3 py-2.5 outline-none text-sm mono border-none shadow-none"
                     placeholder="0.00"
                   />
                 </div>
@@ -101,11 +105,11 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                     <span className="font-medium text-sm">{toCurrency.symbol}</span>
                     <ChevronDown className="w-3 h-3 text-slate-400" />
                   </div>
-                  <input
+                  <Input
                     type="number"
                     value={toAmount}
                     onChange={(e) => setToAmount(e.target.value)}
-                    className="flex-1 bg-transparent px-3 py-2.5 outline-none text-sm mono"
+                    className="flex-1 bg-transparent px-3 py-2.5 outline-none text-sm mono border-none shadow-none"
                     placeholder="0.00"
                   />
                 </div>
@@ -119,8 +123,9 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
             <label className="block text-xs text-slate-400 mb-3 font-medium">Payment Services</label>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {paymentMethods.map((method) => (
-                <button
+                <Button
                   key={method.id}
+                  variant="ghost"
                   onClick={() => setSelectedPayment(method.id)}
                   className={`payment-btn flex items-center justify-center space-x-2 px-4 py-3 rounded-lg border text-center transition-all ${
                     selectedPayment === method.id
@@ -136,16 +141,16 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
                       className="rounded-full"
                     />
                   <span className="text-sm font-medium">{method.name}</span>
-                </button>
+                </Button>
               ))}
             </div>
           </div>
 
          
           <div className="flex justify-start">
-            <button className="px-6 py-2 rounded-md font-medium transition-all text-sm bg-blue-600 text-white hover:bg-blue-700">
+            <Button className="px-6 py-2 rounded-md font-medium transition-all text-sm bg-blue-600 text-white hover:bg-blue-700">
               {activeTab === 'buy' ? 'Buy' : 'Sell'}
-            </button>
+            </Button>
           </div>
         </div>
       </div>

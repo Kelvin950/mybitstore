@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 interface P2PControlsProps {
   activeTab: 'buy' | 'sell';
@@ -19,7 +20,9 @@ export default function P2PControls({
     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
 
       <div className="flex space-x-1 bg-slate-800/30 rounded-lg p-0.5">
-        <button
+        <Button
+          variant="ghost"
+          size="sm"
           onClick={() => setActiveTab('buy')}
           className={`px-3 py-1.5 rounded-md font-medium transition-all text-xs ${
             activeTab === 'buy'
@@ -28,8 +31,10 @@ export default function P2PControls({
           }`}
         >
           Buy
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
           onClick={() => setActiveTab('sell')}
           className={`px-3 py-1.5 rounded-md font-medium transition-all text-xs ${
             activeTab === 'sell'
@@ -38,14 +43,16 @@ export default function P2PControls({
           }`}
         >
           Sell
-        </button>
+        </Button>
       </div>
 
     
       <div className="flex gap-2 flex-wrap">
         {cryptoOptions.map((crypto) => (
-          <button
+          <Button
             key={crypto}
+            variant="ghost"
+            size="sm"
             onClick={() => setSelectedCrypto(crypto)}
             className={`px-3 py-1.5 rounded-md border transition-all text-xs ${
               selectedCrypto === crypto
@@ -83,7 +90,7 @@ export default function P2PControls({
               )}
               <span>{crypto}</span>
             </div>
-          </button>
+          </Button>
         ))}
       </div>
     </div>
