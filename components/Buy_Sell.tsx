@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import {Currency ,PaymentMethod} from "@/lib/types"
-import { ChevronDown, Wallet, Smartphone, Building2, CreditCard, Plus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,7 +24,7 @@ const [activeTab, setActiveTab] = useState<'buy' | 'sell'>('buy');
 
   const paymentMethods: PaymentMethod[] = [
     { id: 'eziepay', name: 'Eziepay Global Wallet', icon: "https://media.licdn.com/dms/image/v2/C4D0BAQHF93mjyuJsSw/company-logo_200_200/company-logo_200_200/0/1674291509517?e=2147483647&v=beta&t=d0Iu0Iea1t3k4GU9Md2aL_25iEZ476yDBnFMZHrCVwA" },
-    { id: 'mtn', name: 'MTN MOMO', icon:  "https://www.delreport.com/wp-content/uploads/2020/08/screen-0.jpg" },
+    { id: 'mtn', name: 'MTN MOMO', icon:  "https://newsghana.com.gh/wp-content/uploads/2021/03/MTN-MoMo.png" },
     { id: 'vodafone', name: 'Vodafone Cash', icon: "https://www.telecel.com.gh/img/Telecel-Icon-Red.png" },
     { id: 'bank', name: 'Bank Transfer', icon: "https://statrys.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fstatrys%2F817d7009-1e05-45a5-a480-812c29ee3944_international-bank-transfer.png%3Fauto%3Dcompress%2Cformat%26rect%3D0%2C0%2C680%2C680%26w%3D680%26h%3D680&w=3840&q=75" },
   ];

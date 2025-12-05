@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
 
     {
       protocol:"https" , 
-      hostname:"www.delreport.com" 
+      hostname:"newsghana.com.gh" 
     } ,
     {
       protocol:"https" , 
