@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyBitstore Assessment
 
-## Getting Started
+A cryptocurrency trading platform built with Next.js featuring buy/sell functionality and P2P trading.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Frontend**: Next.js 16 (App Router), React 19, TypeScript
+- **Styling**: Tailwind CSS v4, shadcn/ui components
+- **Icons**: Lucide React
+- **Package Manager**: pnpm (npm compatible)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Start development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+3. **Open in browser**: http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+## Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Known Limitations & Future Improvements
 
-## Deploy on Vercel
+### Current Limitations
+- Static data (no real API integration)
+- Payment methods are display-only
+- No user authentication system
+- Currency rates are hardcoded
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### With More Time, I Would Add:
+- **Backend Integration**: Real API for trades, user management, and live crypto prices
+- **Authentication**: User login/signup with JWT tokens
+- **Real-time Data**: WebSocket integration for live price updates
+- **Payment Processing**: Integration with actual payment gateways
+- **Order Management**: Complete buy/sell order flow with transaction history
+- **Enhanced P2P**: Chat system, escrow functionality, reputation system
+- **Mobile Optimization**: Better responsive design and mobile-first approach
+- **Testing**: Unit tests with Jest and integration tests with Cypress
+- **Performance**: Image optimization, code splitting, and caching strategies
